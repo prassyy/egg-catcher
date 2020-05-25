@@ -40,6 +40,7 @@ struct Constants {
             static let dropping: String = "crap_drop"
             static let eggRemnant: String = "egg_yolk"
             static let droppingRemnant: String = "crap_splash"
+            static let chicken: String = "chicken_0"
         }
         
         struct Particle {
@@ -59,6 +60,6 @@ struct Constants {
     struct Id {
         static let basket: String = "basket"
         static let chicken: String = "chicken"
-        static let egg: String = "Egg"
+        static let object: String = "Object"
     }
 }

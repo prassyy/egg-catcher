@@ -23,7 +23,7 @@ class GameScene: SKScene {
     private lazy var basket: SKSpriteNode = {
         let basket = SKSpriteNode(imageNamed: Constants.Resource.Image.basket)
         basket.name = Constants.Id.basket
-        basket.setScale(0.15)
+        basket.setScale(frame.width/(5.5*basket.size.width))
         basket.physicsBody = SKPhysicsBody(rectangleOf: basket.size)
         basket.physicsBody?.isDynamic = false
         basket.zPosition = Constants.ZPosition.basket
@@ -122,7 +122,7 @@ class GameScene: SKScene {
         scoreboard.position = CGPoint(x: frame.midX, y: frame.maxY - 2*scoreboard.frame.height/2)
         addChild(scoreboard)
     }
-        
+
     private func handleObjectSplash(object: Object) {
         gameManager.brokeObject(object: object)
         object.physicsBody?.isDynamic = false
@@ -161,11 +161,11 @@ extension GameScene: SKPhysicsContactDelegate {
         let bodyB = contact.bodyB
         switch bodyA.categoryBitMask | bodyB.categoryBitMask {
         case Constants.PhysicsCategory.eggCategory | Constants.PhysicsCategory.floorCategory:
-            if let object = (bodyA.node?.name == Constants.Id.egg ? bodyA.node : bodyB.node) as? Object {
+            if let object = (bodyA.node?.name == Constants.Id.object ? bodyA.node : bodyB.node) as? Object {
                 handleObjectSplash(object: object)
             }
         case Constants.PhysicsCategory.eggCategory | Constants.PhysicsCategory.basketCategory:
-            if let object = (bodyA.node?.name == Constants.Id.egg ? bodyA.node : bodyB.node) as? Object {
+            if let object = (bodyA.node?.name == Constants.Id.object ? bodyA.node : bodyB.node) as? Object {
                 handleObjectCatch(object: object)
             }
         default: break

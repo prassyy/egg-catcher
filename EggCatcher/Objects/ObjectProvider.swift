@@ -1,12 +1,13 @@
 //
 //  ObjectFactory.swift
-//  Tetris3D
+//  EggCatcher
 //
 //  Created by Prassyy on 16/05/20.
 //  Copyright © 2020 prassy. All rights reserved.
 //
 
-import SpriteKit
+import Foundation
+import CoreGraphics
 
 protocol ObjectProviding {
     func getObject(type: ObjectType, withSize size: CGSize) -> Object

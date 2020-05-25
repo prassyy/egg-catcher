@@ -32,7 +32,7 @@ class DroppingPlatform: SKSpriteNode {
     
     private func setupChickens() {
         for i in 0..<numberOfChickens {
-            let chicken = SKSpriteNode(imageNamed: "chicken_0")
+            let chicken = SKSpriteNode(imageNamed: Constants.Resource.Image.chicken)
             chicken.setScale(frame.width/(CGFloat(numberOfChickens) * chicken.size.width))
             chicken.position = CGPoint(x: frame.minX + (CGFloat(i) * frame.width/CGFloat(numberOfChickens)) + chicken.size.width/2,
                                        y: sittingBeam.frame.maxY + chicken.size.height/2)

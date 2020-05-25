@@ -16,7 +16,7 @@ protocol GameManagerDelegate {
 
 class GameManager {
     private let numberOfChickens: Int
-    private let dropScheduler: DispatchQueue
+    private let dropScheduler: Dispatching
     private var livesRemaining: Int {
         didSet {
             delegate?.updateScoreboard(score: score, livesRemaining: livesRemaining)
@@ -44,7 +44,7 @@ class GameManager {
     
     init(numberOfChickens: Int,
          numberOfLives: Int,
-         dropScheduler: DispatchQueue) {
+         dropScheduler: Dispatching) {
         self.numberOfChickens = numberOfChickens
         self.livesRemaining = numberOfLives
         self.dropScheduler = dropScheduler

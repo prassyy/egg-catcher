@@ -52,7 +52,7 @@ class Object: SKSpriteNode {
     }
     
     private func setUpObjectParameters() {
-        self.name = Constants.Id.egg
+        self.name = Constants.Id.object
         self.zPosition = Constants.ZPosition.object
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = true
